@@ -1,7 +1,7 @@
 #!/bin/bash
 
 yum install chrony -y
-systemctl enable chrony
+systemctl enable chronyd
 cat <<"EOT"> /etc/chrony.conf
 server 0.ca.pool.ntp.org
 server 1.ca.pool.ntp.org

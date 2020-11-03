@@ -1,6 +1,7 @@
 #!/bin/bash
 
-yum install -y pcs fence-agents-all
+dnf config-manager --set-enabled HighAvailability
+yum install -y pcs pacemaker fence-agents-all
 firewall-cmd --permanent --add-service=high-availability
 firewall-cmd --reload
 systemctl enable pcsd
