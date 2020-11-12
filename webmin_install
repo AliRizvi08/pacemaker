@@ -1,0 +1,11 @@
+#!/bin/bash
+
+yum -y install @perl
+sudo tee  /etc/yum.repos.d/webmin.repo<<EOF
+[Webmin]
+name=Webmin Distribution Neutral
+baseurl=https://download.webmin.com/download/yum
+enabled=1
+EOF
+rpm --import http://www.webmin.com/jcameron-key.asc
+dnf install webmin
